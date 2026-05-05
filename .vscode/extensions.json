@@ -1,8 +1,0 @@
-{
-  "recommendations": [
-    "xaver.clang-format",
-    "ms-vscode.cpptools",
-    "ms-python.python",
-    "redhat.java"
-  ]
-}
