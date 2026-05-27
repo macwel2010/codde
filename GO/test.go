@@ -1,29 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+)
 
-type stack struct {
-	val int
+type user struct {
+	firstname string
+	lastname  string
+	username  string
+	password  string
 }
 
 func main() {
 
-	var n int
-	fmt.Println("How many numbers do you want in the slice?")
-	fmt.Scan(&n)
-	push(n)
-
-}
-
-func push(n int) {
-
-	var slic []int
-	var num int
-	for i := 1; i <= n; i++ {
-		fmt.Printf("Enter the %d number to append : ", i)
-		fmt.Scan(&num)
-		slic = append(slic, num)
+	err := http.ListenAndServe(":15000", nil)
+	if err != nil {
+		fmt.Println("failed to load.")
 	}
+	fmt.Println("This is port 15000.")
 
-	fmt.Println(slic)
 }
